@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode (default) */
+body {
+  background-color: #000000;
+  color: #e8e8e8;
+}
+
+/* Light mode */
+html.light body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+/* Premium background effect with golden glow - Dark mode only */
+:not(.light) body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Gradient divider */
+.gradient-divider {
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  height: 2px;
+  margin: 2rem 0;
+  opacity: 0.5;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Premium Black & Golden Button */
+.btn-primary {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+  color: #1a1a1a;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #1a1a1a;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.7);
+  transform: translateY(-4px);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Section styling */
+.ftco-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+@media (max-width: 768px) {
+  .ftco-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+/* Heading styles - Premium */
+.heading-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #d4af37, #ffd700, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 20px rgba(212, 175, 55, 0.2);
+}
+
+.heading-section h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+/* Custom underline - Golden */
+.underline {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  border-radius: 9999px;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Progress bar - Golden */
+.progress-bar {
+  height: 7px;
+  background: linear-gradient(90deg, #d4af37 0%, #ffd700 100%);
+  border-radius: 9999px;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Card shadow - Premium */
+.shadow-card {
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+}
+
+/* Card with golden border */
+.card-golden {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.02);
+}
+
+.card-golden:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animations for scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animations-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Golden glow animation */
+@keyframes goldGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  }
+}
+
+.gold-glow {
+  animation: goldGlow 2s ease-in-out infinite;
+}
+
+/* Loading spinner - Golden */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(212, 175, 55, 0.2);
+  border-top-color: #d4af37;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Zoom effect for images */
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+  border-radius: 8px;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+/* Hero section gradient overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(212, 175, 55, 0.1));
+}
+
+/* Premium dark overlay with golden tint */
+.overlay-premium {
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.8), rgba(212, 175, 55, 0.1));
+  backdrop-filter: blur(2px);
+}
+
+/* Golden text */
+.text-golden {
+  color: #d4af37;
+}
+
+.text-golden-light {
+  color: #ffd700;
+}
+
+/* Golden underline text */
+.border-bottom-golden {
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 8px;
+}
+
+/* Premium styling for dark sections */
+.bg-dark-premium {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+/* Section divider with golden gradient */
+.divider-golden {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%);
+  margin: 40px 0;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Highlight effect */
+.highlight-golden {
+  position: relative;
+}
+
+.highlight-golden::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* Premium link styling */
+a {
+  color: #d4af37;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+/* Responsive heading */
+@media (max-width: 768px) {
+  .heading-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .heading-section h2 {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c13" />
+      <stop offset="50%" stop-color="#0f1923" />
+      <stop offset="100%" stop-color="#080c13" />
+    </linearGradient>
+    
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#FFF5CC" />
+      <stop offset="100%" stop-color="#FFD700" />
+    </linearGradient>
+    
+    <filter id="innerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer glow ring -->
+  <circle cx="150" cy="150" r="145" fill="none" stroke="url(#goldGradient)" stroke-width="2" opacity="0.3" />
+  
+  <!-- Main circle with gradient -->
+  <circle cx="150" cy="150" r="130" fill="url(#circleGradient)" filter="url(#innerShadow)" />
+  
+  <!-- Golden border ring -->
+  <circle cx="150" cy="150" r="130" fill="none" stroke="url(#goldGradient)" stroke-width="3" />
+  
+  <!-- Inner accent ring -->
+  <circle cx="150" cy="150" r="115" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.4" />
+  
+  <!-- Code brackets decoration - left -->
+  <path 
+    d="M 80 130 L 70 150 L 80 170" 
+    stroke="#FFD700" 
+    stroke-width="3" 
+    fill="none" 
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.8"
+  />
+  
+  <!-- Code brackets decoration - right -->
+  <path 
+    d="M 220 130 L 230 150 L 220 170" 
+    stroke="#FFD700" 
+    stroke-width="3" 
+    fill="none" 
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.8"
+  />
+  
+  <!-- Main text - PROF -->
+  <text
+    x="150"
+    y="165"
+    text-anchor="middle"
+    fill="url(#goldGradient)"
+    font-size="56"
+    font-weight="700"
+    font-family="'Segoe UI', Arial, sans-serif"
+    letter-spacing="8"
+  >
+    PROF
+  </text>
+  
+  <!-- Underline accent -->
+  <line x1="90" y1="180" x2="210" y2="180" stroke="#FFD700" stroke-width="2" opacity="0.6" />
+  
+  <!-- Tech dots pattern -->
+  <circle cx="150" cy="80" r="2.5" fill="#FFD700" opacity="0.8" />
+  <circle cx="150" cy="220" r="2.5" fill="#FFD700" opacity="0.8" />
+  <circle cx="95" cy="100" r="1.5" fill="#FFD700" opacity="0.6" />
+  <circle cx="205" cy="100" r="1.5" fill="#FFD700" opacity="0.6" />
+  <circle cx="95" cy="200" r="1.5" fill="#FFD700" opacity="0.6" />
+  <circle cx="205" cy="200" r="1.5" fill="#FFD700" opacity="0.6" />
+</svg>
