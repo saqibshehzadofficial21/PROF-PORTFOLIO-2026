@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { HiMenuAlt3, HiX, HiSun, HiMoon } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 import Logo from "./Logo";
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="fixed top-0 w-full bg-black/90 dark:bg-black/90 light:bg-white/90 backdrop-blur-md shadow-2xl z-50 border-b border-yellow-600/30 dark:border-yellow-600/30 light:border-gray-300/30"
+      className="fixed top-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-2xl z-50 border-b border-gray-200/50 dark:border-yellow-600/30"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -53,7 +53,7 @@ export default function Navbar() {
                 to={item.id}
                 smooth={true}
                 duration={500}
-                className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-yellow-400 transition-colors cursor-pointer font-medium uppercase text-sm tracking-wider border-b-2 border-transparent hover:border-yellow-400 pb-1"
+                className="text-secondary hover:text-yellow-400 transition-colors cursor-pointer font-medium uppercase text-sm tracking-wider border-b-2 border-transparent hover:border-yellow-400 pb-1"
               >
                 {item.label}
               </ScrollLink>
@@ -71,7 +71,7 @@ export default function Navbar() {
                   ? "Switch to Light Mode"
                   : "Switch to Dark Mode"
               }
-              className="p-3 rounded-lg bg-amber-400 dark:bg-amber-400 light:bg-gray-800 text-black dark:text-black light:text-amber-400 hover:bg-amber-500 dark:hover:bg-amber-500 light:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center shadow-md"
+              className="p-3 rounded-lg bg-gray-800 text-amber-400 dark:bg-amber-400 dark:text-black hover:bg-gray-700 dark:hover:bg-amber-500 transition-all duration-200 flex items-center justify-center shadow-md"
             >
               {theme === "dark" ? (
                 <HiSun className="w-5 h-5" />
@@ -95,7 +95,7 @@ export default function Navbar() {
                   ? "Switch to Light Mode"
                   : "Switch to Dark Mode"
               }
-              className="p-3 rounded-lg bg-amber-400 dark:bg-amber-400 light:bg-gray-800 text-black dark:text-black light:text-amber-400 hover:bg-amber-500 dark:hover:bg-amber-500 light:hover:bg-gray-700 transition-all duration-200 flex items-center justify-center shadow-md"
+              className="p-3 rounded-lg bg-gray-800 text-amber-400 dark:bg-amber-400 dark:text-black hover:bg-gray-700 dark:hover:bg-amber-500 transition-all duration-200 flex items-center justify-center shadow-md"
             >
               {theme === "dark" ? (
                 <HiSun className="w-5 h-5" />
@@ -118,7 +118,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 flex flex-col gap-4 border-t border-yellow-600/30 dark:border-yellow-600/30 light:border-gray-300/30 pt-4">
+          <div className="md:hidden mt-4 pb-4 flex flex-col gap-4 border-t border-gray-200/40 dark:border-yellow-600/30 pt-4">
             {menuItems.map((item) => (
               <ScrollLink
                 key={item.id}
@@ -126,7 +126,7 @@ export default function Navbar() {
                 smooth={true}
                 duration={500}
                 onClick={handleMenuItemClick}
-                className="text-gray-300 dark:text-gray-300 light:text-gray-700 hover:text-yellow-400 transition-colors cursor-pointer font-medium uppercase text-sm tracking-wider"
+                className="text-secondary hover:text-yellow-400 transition-colors cursor-pointer font-medium uppercase text-sm tracking-wider"
               >
                 {item.label}
               </ScrollLink>

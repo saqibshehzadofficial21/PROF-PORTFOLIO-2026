@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portfolio Website - React + Tailwind CSS Conversion
 
 ## Overview
@@ -148,3 +149,6 @@ For customization:
 **Status:** ✅ Complete and Production Ready
 
 All functionality, styling, and features from the original portfolio template have been successfully converted to React with Tailwind CSS!
+=======
+# PROF-PORTFOLIO-2026
+>>>>>>> 773166b43f2e333ca701d89f66afc8d41a8baf37

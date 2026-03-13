@@ -1,16 +1,14 @@
 import { Link as ScrollLink } from "react-scroll";
 import { portfolioData } from "../data/portfolioData";
 import ExperienceCard from "./common/ExperienceCard";
+import Button from "./common/Button";
 
 export default function ResumeSection() {
   const { experience, certificates, education, portfolioProjects, personal } =
     portfolioData;
 
   return (
-    <section
-      id="resume"
-      className="ftco-section bg-gradient-to-b from-black via-gray-900 to-black"
-    >
+    <section id="resume" className="ftco-section bg-alt dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -20,7 +18,7 @@ export default function ResumeSection() {
           <h2 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-6">
             Resume
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-secondary max-w-2xl mx-auto leading-relaxed">
             Motivated and detail-oriented Full Stack Web Developer with 3 months
             of front-end internship experience using HTML, CSS, and JavaScript.
             Completed IBM projects on Coursera and currently developing back-end
@@ -52,14 +50,14 @@ export default function ResumeSection() {
           <h3 className="text-3xl font-bold text-yellow-400 mb-2">Projects</h3>
           <div className="w-16 h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 mb-8 rounded-full"></div>
 
-          <div className="bg-gray-800 border border-yellow-600/30 rounded-lg shadow-lg p-6">
+          <div className="bg-white dark:bg-gray-800 border border-yellow-600/30 rounded-lg shadow-lg p-6">
             <ul className="space-y-4">
               {portfolioProjects.map((project, index) => (
                 <li key={index} className="flex gap-3">
                   <span className="text-yellow-400 font-bold">•</span>
                   <div>
-                    <strong className="text-gray-200">{project.name}:</strong>
-                    <span className="text-gray-400">
+                    <strong className="text-secondary">{project.name}:</strong>
+                    <span className="text-secondary">
                       {" "}
                       {project.description}
                     </span>
@@ -77,14 +75,14 @@ export default function ResumeSection() {
           </h3>
           <div className="w-16 h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 mb-8 rounded-full"></div>
 
-          <div className="bg-gray-800 border border-yellow-600/30 rounded-lg shadow-lg p-6">
+          <div className="bg-white dark:bg-gray-800 border border-yellow-600/30 rounded-lg shadow-lg p-6">
             <ul className="space-y-4">
               {certificates.map((cert, index) => (
                 <li key={index} className="flex gap-3">
                   <span className="text-yellow-400 font-bold">•</span>
                   <div>
-                    <strong className="text-gray-200">{cert.title}:</strong>
-                    <span className="text-gray-400"> {cert.description}</span>
+                    <strong className="text-secondary">{cert.title}:</strong>
+                    <span className="text-secondary"> {cert.description}</span>
                   </div>
                 </li>
               ))}
@@ -101,18 +99,18 @@ export default function ResumeSection() {
             {education.map((edu, index) => (
               <div
                 key={edu.id}
-                className="bg-gray-800 border border-yellow-600/30 rounded-lg shadow-lg p-6 hover:border-yellow-400/50 transition-all hover:shadow-xl hover:shadow-yellow-500/10"
+                className="bg-white dark:bg-gray-800 border border-yellow-600/30 rounded-lg shadow-lg p-6 hover:border-yellow-400/50 transition-all hover:shadow-xl hover:shadow-yellow-500/10"
               >
                 <span className="text-xs text-yellow-400 font-semibold uppercase tracking-wide">
                   {edu.date}
                 </span>
-                <h4 className="text-xl font-bold text-gray-100 mt-2 mb-2">
+                <h4 className="text-xl font-bold text-secondary mt-2 mb-2">
                   {edu.degree}
                 </h4>
                 <p className="text-yellow-400 font-semibold text-sm mb-3">
                   {edu.school}
                 </p>
-                <p className="text-gray-400">{edu.achievement}</p>
+                <p className="text-secondary">{edu.achievement}</p>
               </div>
             ))}
           </div>
@@ -120,14 +118,14 @@ export default function ResumeSection() {
 
         {/* Download CV Button */}
         <div className="text-center">
-          <a
+          <Button
+            as="a"
             href={personal.cv}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/50 uppercase tracking-wide text-lg"
           >
             Download CV
-          </a>
+          </Button>
         </div>
       </div>
     </section>

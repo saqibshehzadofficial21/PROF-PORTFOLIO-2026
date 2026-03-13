@@ -1,4 +1,5 @@
 import { useInView } from "react-intersection-observer";
+import Button from "./Button";
 
 export default function ProjectCard({ project, index }) {
   const { ref, inView } = useInView({
@@ -14,9 +15,9 @@ export default function ProjectCard({ project, index }) {
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <div className="bg-gray-800 border border-yellow-600/30 rounded-lg overflow-hidden shadow-md hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300">
+      <div className="bg-white dark:bg-gray-800 border border-yellow-600/30 rounded-lg overflow-hidden shadow-md hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300">
         {/* Project Image */}
-        <div className="relative h-48 md:h-56 overflow-hidden bg-gray-700 zoom-effect group">
+        <div className="relative h-48 md:h-56 overflow-hidden bg-gray-100 dark:bg-gray-700 zoom-effect group">
           <img
             src={`/images/${project.image}`}
             alt={project.title}
@@ -37,29 +38,29 @@ export default function ProjectCard({ project, index }) {
             </a>
           </h3>
 
-          <p className="text-gray-300 mb-4 leading-relaxed">
+          <p className="text-secondary mb-4 leading-relaxed">
             {project.description}
           </p>
 
           {/* Links */}
           <div className="flex gap-4 flex-wrap">
-            <a
+            <Button
+              as="a"
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-black rounded font-semibold text-sm transition-all hover:shadow-lg hover:shadow-yellow-500/50 bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300"
             >
               GitHub
-            </a>
+            </Button>
             {project.link && (
-              <a
+              <Button
+                as="a"
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-black rounded font-semibold text-sm transition-all hover:shadow-lg hover:shadow-yellow-500/50 bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300"
               >
                 View Live
-              </a>
+              </Button>
             )}
           </div>
         </div>

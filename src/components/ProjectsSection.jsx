@@ -5,10 +5,7 @@ export default function ProjectsSection() {
   const { projects } = portfolioData;
 
   return (
-    <section
-      id="projects"
-      className="ftco-section bg-gradient-to-b from-black via-gray-900 to-black dark:from-black dark:via-gray-900 dark:to-black light:from-white light:via-gray-100 light:to-white"
-    >
+    <section id="projects" className="ftco-section bg-page dark:bg-black">
       <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -19,7 +16,7 @@ export default function ProjectsSection() {
             Projects
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 mb-8 rounded-full mx-auto"></div>
-          <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 max-w-2xl mx-auto">
+          <p className="text-secondary max-w-2xl mx-auto">
             Below are some of my web development projects showcasing front-end
             and full-stack skills.
           </p>

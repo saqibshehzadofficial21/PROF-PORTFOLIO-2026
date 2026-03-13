@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { portfolioData } from '../data/portfolioData';
-
+import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { portfolioData } from "../data/portfolioData";
+import Button from "./common/Button";
 function CounterItem({ label, value, index }) {
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView({
@@ -48,7 +48,7 @@ export default function CounterSection() {
 
   return (
     <section
-      className="ftco-section bg-cover bg-center py-16 md:py-24"
+      className="ftco-section bg-alt dark:bg-black bg-cover bg-center py-16 md:py-24"
       id="section-counter"
     >
       <div className="relative z-10">
@@ -72,9 +72,9 @@ export default function CounterSection() {
         <div
           className="relative bg-cover bg-center py-16 md:py-24"
           style={{
-            backgroundImage: 'url(/images/bg_1.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundImage: "url(/images/bg_1.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
@@ -89,14 +89,14 @@ export default function CounterSection() {
               I love building web applications and exploring new technologies
             </h4>
 
-            <a
+            <Button
+              as="a"
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-300 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/50"
             >
               GitHub
-            </a>
+            </Button>
           </div>
         </div>
       </div>

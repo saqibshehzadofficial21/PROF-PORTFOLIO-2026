@@ -8,14 +8,14 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { portfolioData } from "../data/portfolioData";
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { theme } = useTheme();
 
   return (
-    <footer className="bg-black dark:bg-black light:bg-white text-gray-400 dark:text-gray-400 light:text-gray-600 py-8">
+    <footer className="bg-alt text-secondary dark:bg-black dark:text-gray-400 py-8">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <motion.div
           className="mb-6"
@@ -31,7 +31,7 @@ export default function Footer() {
               href={portfolioData.personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-yellow-400 transition-colors"
+              className="text-gray-500 dark:text-gray-400 hover:text-yellow-400 transition-colors"
               whileHover={{ scale: 1.2, rotateY: 180 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -41,7 +41,7 @@ export default function Footer() {
               href={portfolioData.personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-yellow-400 transition-colors"
+              className="text-gray-500 dark:text-gray-400 hover:text-yellow-400 transition-colors"
               whileHover={{ scale: 1.2, rotateY: 180 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -51,7 +51,7 @@ export default function Footer() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-yellow-400 transition-colors"
+              className="text-gray-500 dark:text-gray-400 hover:text-yellow-400 transition-colors"
               whileHover={{ scale: 1.2, rotateY: 180 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -61,7 +61,7 @@ export default function Footer() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-yellow-400 transition-colors"
+              className="text-gray-500 dark:text-gray-400 hover:text-yellow-400 transition-colors"
               whileHover={{ scale: 1.2, rotateY: 180 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -71,7 +71,7 @@ export default function Footer() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-yellow-400 transition-colors"
+              className="text-gray-500 dark:text-gray-400 hover:text-yellow-400 transition-colors"
               whileHover={{ scale: 1.2, rotateY: 180 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -81,7 +81,7 @@ export default function Footer() {
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-yellow-400 transition-colors"
+              className="text-gray-500 dark:text-gray-400 hover:text-yellow-400 transition-colors"
               whileHover={{ scale: 1.2, rotateY: 180 }}
               transition={{ type: "spring", stiffness: 300 }}
             >

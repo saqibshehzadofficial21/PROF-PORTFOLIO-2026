@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolioData";
 import SkillBar from "./common/SkillBar";
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 
 export default function AboutSection() {
   const { personal, about, skills } = portfolioData;
@@ -23,10 +23,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section
-      id="about"
-      className="ftco-section bg-gradient-to-b from-gray-900 to-black dark:from-gray-900 dark:to-black light:from-gray-100 light:to-white"
-    >
+    <section id="about" className="ftco-section bg-page dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left - Profile Image and Info */}
@@ -36,7 +33,7 @@ export default function AboutSection() {
               inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
-            <div className="bg-gray-800 dark:bg-gray-800 light:bg-white border border-yellow-600/30 dark:border-yellow-600/30 light:border-gray-300/30 rounded-lg overflow-hidden shadow-2xl p-6 hover:border-yellow-400/50 transition-all">
+            <div className="bg-white dark:bg-gray-900 border border-yellow-600/30 dark:border-yellow-600/30 rounded-lg overflow-hidden shadow-2xl p-6 hover:border-yellow-400/50 transition-all">
               {/* Profile Image */}
               <div className="mb-6">
                 <img
@@ -50,23 +47,19 @@ export default function AboutSection() {
               <div className="space-y-3 mb-8">
                 <div className="border-b border-yellow-600/20 pb-2">
                   <span className="font-semibold text-yellow-400">Name: </span>
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-700">
-                    {personal.name}
-                  </span>
+                  <span className="text-secondary">{personal.name}</span>
                 </div>
                 <div className="border-b border-yellow-600/20 pb-2">
                   <span className="font-semibold text-yellow-400">
                     Job Role:{" "}
                   </span>
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-700">
-                    {personal.title}
-                  </span>
+                  <span className="text-secondary">{personal.title}</span>
                 </div>
                 <div className="border-b border-yellow-600/20 pb-2">
                   <span className="font-semibold text-yellow-400">
                     Experience:{" "}
                   </span>
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-700">
+                  <span className="text-gray-700 dark:text-gray-300">
                     3 Months Internship
                   </span>
                 </div>
@@ -74,23 +67,17 @@ export default function AboutSection() {
                   <span className="font-semibold text-yellow-400">
                     Address:{" "}
                   </span>
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-700">
-                    {personal.address}
-                  </span>
+                  <span className="text-secondary">{personal.address}</span>
                 </div>
                 <div className="border-b border-yellow-600/20 pb-2">
                   <span className="font-semibold text-yellow-400">
                     Contact:{" "}
                   </span>
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-700">
-                    {personal.contact}
-                  </span>
+                  <span className="text-secondary">{personal.contact}</span>
                 </div>
                 <div className="border-b border-yellow-600/20 pb-2">
                   <span className="font-semibold text-yellow-400">Email: </span>
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-700">
-                    {personal.email}
-                  </span>
+                  <span className="text-secondary">{personal.email}</span>
                 </div>
                 <div className="border-b border-yellow-600/20 pb-2">
                   <span className="font-semibold text-yellow-400">
@@ -108,7 +95,7 @@ export default function AboutSection() {
               </div>
 
               {/* Skills Section */}
-              <div className="bg-black/50 dark:bg-black/50 light:bg-gray-200/50 p-4 rounded-lg border border-yellow-600/20 dark:border-yellow-600/20 light:border-gray-300/20">
+              <div className="bg-white/50 dark:bg-black/50 p-4 rounded-lg border border-yellow-600/20 dark:border-yellow-600/20">
                 <h4 className="text-lg font-bold mb-4 text-yellow-400">
                   Skills
                 </h4>
@@ -137,7 +124,7 @@ export default function AboutSection() {
               <h2 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-6">
                 About Me
               </h2>
-              <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 leading-relaxed mb-6">
+              <p className="text-secondary leading-relaxed mb-6">
                 {about.description}
               </p>
             </div>
@@ -149,7 +136,7 @@ export default function AboutSection() {
                 whileHover={{ rotateY: 5, rotateX: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="bg-gradient-to-br from-yellow-600/10 to-black/50 dark:from-yellow-600/10 dark:to-black/50 light:from-yellow-600/10 light:to-white/50 p-6 rounded-lg border border-yellow-600/30 dark:border-yellow-600/30 light:border-gray-300/30 hover:border-yellow-400/50 transition-all transform-gpu hover:shadow-2xl hover:shadow-yellow-500/20">
+                <div className="bg-gradient-to-br from-yellow-600/10 to-white/50 dark:from-yellow-600/10 dark:to-black/50 p-6 rounded-lg border border-yellow-600/30 dark:border-yellow-600/30 hover:border-yellow-400/50 transition-all transform-gpu hover:shadow-2xl hover:shadow-yellow-500/20">
                   <h3 className="text-xl font-bold mb-4 text-yellow-400">
                     Profile Details
                   </h3>
@@ -157,16 +144,14 @@ export default function AboutSection() {
                     {aboutInfo.map((info, index) => (
                       <motion.div
                         key={index}
-                        className="bg-gray-800 dark:bg-gray-800 light:bg-gray-100 p-4 rounded-lg border border-yellow-600/20 dark:border-yellow-600/20 light:border-gray-300/20 hover:border-yellow-400/30 transition-all cursor-pointer"
+                        className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-yellow-600/20 dark:border-yellow-600/20 hover:border-yellow-400/30 transition-all cursor-pointer"
                         whileHover={{ scale: 1.05, rotateY: 10 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >
                         <span className="font-semibold text-yellow-400 block mb-1">
                           {info.label}:
                         </span>
-                        <span className="text-gray-300 dark:text-gray-300 light:text-gray-700">
-                          {info.value}
-                        </span>
+                        <span className="text-secondary">{info.value}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -175,18 +160,27 @@ export default function AboutSection() {
             </div>
 
             {/* Counter */}
-            <div className="bg-gradient-to-br from-yellow-600/10 to-black/50 dark:from-yellow-600/10 dark:to-black/50 light:from-yellow-600/10 light:to-white/50 p-6 rounded-lg border border-yellow-600/30 dark:border-yellow-600/30 light:border-gray-300/30 hover:border-yellow-400/50 transition-all">
-              <p className="text-lg text-gray-200 dark:text-gray-200 light:text-gray-800">
+            <div className="bg-gradient-to-br from-yellow-600/10 to-white/50 dark:from-yellow-600/10 dark:to-black/50 p-6 rounded-lg border border-yellow-600/30 dark:border-yellow-600/30 hover:border-yellow-400/50 transition-all">
+              <p className="text-lg text-secondary">
                 <span className="text-4xl font-bold text-yellow-400">
                   {about.projectsCompleted}+
                 </span>
-                <span className="ml-2">Projects completed</span>
+                <span>Projects completed</span>
               </p>
               <a
                 href={personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-black font-bold rounded-lg hover:from-yellow-400 hover:to-yellow-300 transition-all hover:shadow-lg hover:shadow-yellow-500/50"
+                className={`
+                  px-8 py-4 font-bold rounded-lg 
+                  transition-all duration-300 cursor-pointer text-center uppercase tracking-wide
+                  text-gray-900
+                  bg-gradient-to-r from-yellow-400 to-yellow-300
+                  hover:from-amber-600 hover:to-amber-500
+                  hover:text-white
+                  hover:shadow-xl hover:shadow-amber-700/40
+                  active:scale-[0.97]
+                `}
               >
                 LinkedIn
               </a>

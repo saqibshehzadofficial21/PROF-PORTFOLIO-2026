@@ -8,10 +8,11 @@ import {
 } from "react-icons/fa6";
 import { Link as ScrollLink } from "react-scroll";
 import { portfolioData } from "../data/portfolioData";
+import Button from "./common/Button";
 
 function ContactCard({ icon: Icon, title, items }) {
   return (
-    <div className="bg-gray-800 border border-yellow-600 rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+    <div className="bg-white dark:bg-gray-800 border border-yellow-600 rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
       <div className="flex justify-center mb-4">
         <div
           className="w-16 h-16 rounded-full flex items-center justify-center"
@@ -92,10 +93,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section
-      id="contact"
-      className="ftco-section bg-gradient-to-b from-gray-900 to-black"
-    >
+    <section id="contact" className="ftco-section bg-page dark:bg-black">
       <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -106,7 +104,7 @@ export default function ContactSection() {
             Contact Me
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 mb-8 rounded-full mx-auto"></div>
-          <p className="text-gray-300">
+          <p className="text-secondary">
             Below are the details to reach out to me!
           </p>
         </div>
@@ -124,21 +122,18 @@ export default function ContactSection() {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gray-800 border border-yellow-600/30 rounded-lg shadow-md p-8 md:p-12 text-center mb-8 hover:border-yellow-400/50 transition-all">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-6">
+        <div className="bg-white dark:bg-gray-800 border border-yellow-600/30 rounded-lg shadow-md p-8 md:p-12 text-center mb-8 hover:border-yellow-400/50 transition-all">
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-6">
             Have a <span className="text-yellow-400">Question?</span>
           </h2>
-          <a
-            href={`mailto:${personal.email}`}
-            className="inline-block px-8 py-4 text-black font-bold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/50 bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 uppercase tracking-wide text-lg"
-          >
+          <Button as="a" href={`mailto:${personal.email}`}>
             Email Me
-          </a>
+          </Button>
         </div>
 
         {/* Social Links */}
         <div className="text-center">
-          <p className="text-gray-300 font-semibold mb-4">Find me on</p>
+          <p className="text-secondary font-semibold mb-4">Find me on</p>
           <div className="flex justify-center gap-6">
             <a
               href={personal.linkedin}
